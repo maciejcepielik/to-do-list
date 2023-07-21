@@ -31,6 +31,15 @@
 
     };
 
+    const addNewTask = (newTaskContent) => {
+        tasks.push(
+            {
+                content: newTaskContent
+            });
+
+        render();
+    };
+
     const init = () => {
         render();
 
@@ -39,19 +48,14 @@
         form.addEventListener("submit", (event) => {
             event.preventDefault();
 
-            const newTask = document.querySelector(".js-newTask").value.trim();
-            // console.log(newTask)
+            const newTaskContent = document.querySelector(".js-newTask").value.trim();
+            // console.log(newTaskContent)
 
-            if (newTask === "") {
+            if (newTaskContent === "") {
                 return;
             }
 
-            tasks.push(
-                {
-                    content: newTask
-                });
-
-            render();
+            addNewTask(newTaskContent);
         });
 
     };
