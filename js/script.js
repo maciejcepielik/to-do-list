@@ -10,6 +10,18 @@
         }
     ];
 
+    const removeTask = () => {
+        const removeButtons = document.querySelectorAll(".js-checkList__button--remove");
+
+        // console.log(removeButtons)
+        removeButtons.forEach((removeButton, taskIndex) => {
+            removeButton.addEventListener("click", () => {
+                tasks.splice(taskIndex, 1)
+                render();
+            })
+        });
+    }
+
     const render = () => {
         let htmlString = "";
 
@@ -20,7 +32,7 @@
                         <img width="30px" height="30px" src="images/not_done.png" alt="not_done">
                     </button>
                     <span class="checkList__task js-checkList__task ${task.done ? "checkList__task--done" : ""}">${task.content}</span>
-                    <button class="checkList__button">
+                    <button class="checkList__button js-checkList__button--remove">
                         <img width="30px" height="30px" src="images/delete_icon.png" alt="delete">
                     </button>
             </li>
@@ -28,6 +40,8 @@
         }
 
         document.querySelector(".js-tasks").innerHTML = htmlString;
+
+        removeTask();
 
     };
 
