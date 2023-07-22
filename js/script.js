@@ -1,27 +1,42 @@
 {
     const tasks = [];
 
-    const removeTask = () => {
+    const addNewTask = (newTaskContent) => {
+        tasks.push(
+            {
+                content: newTaskContent
+            });
+
+        render();
+    };
+
+    const removeTask = (taskIndex) => {
+        tasks.splice(taskIndex, 1)
+        render();
+    };
+
+    const taskDone = (taskIndex) => {
+        tasks[taskIndex].done = !tasks[taskIndex].done;
+        render();
+    };
+
+    const bindEvents = () => {
         const removeButtons = document.querySelectorAll(".js-checkList__button--remove");
 
-        removeButtons.forEach((removeButton, taskIndex) => {
+        removeButtons.forEach((removeButton, index) => {
             removeButton.addEventListener("click", () => {
-                tasks.splice(taskIndex, 1)
-                render();
-            })
+                removeTask(index);
+            });
         });
-    }
 
-    const taskDone = () => {
         const doneButtons = document.querySelectorAll(".js-checkList__button--done");
 
-        doneButtons.forEach((doneButton, taskIndex) => {
+        doneButtons.forEach((doneButton, index) => {
             doneButton.addEventListener("click", () => {
-                tasks[taskIndex].done = !tasks[taskIndex].done;
-                render();
-            })
+                taskDone(index);
+            });
         });
-    }
+    };
 
     const render = () => {
         let htmlString = "";
@@ -41,26 +56,13 @@
 
         document.querySelector(".js-tasks").innerHTML = htmlString;
 
-        removeTask();
-
-        taskDone();
-
-    };
-
-    const addNewTask = (newTaskContent) => {
-        tasks.push(
-            {
-                content: newTaskContent
-            });
-
-        render();
+        bindEvents();
     };
 
     const onFormSubmit = (event) => {
         event.preventDefault();
 
         const newTaskContent = document.querySelector(".js-newTask").value.trim();
-        // console.log(newTaskContent)
 
         if (newTaskContent === "") {
             return;
