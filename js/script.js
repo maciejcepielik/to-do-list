@@ -1,22 +1,23 @@
 {
-    const tasks = [
-        {
-            content: "zrobić obiadek",
-            done: true
-        },
-        {
-            content: "wyprowadzić pieska",
-            done: false
-        }
-    ];
+    const tasks = [];
 
     const removeTask = () => {
         const removeButtons = document.querySelectorAll(".js-checkList__button--remove");
 
-        // console.log(removeButtons)
         removeButtons.forEach((removeButton, taskIndex) => {
             removeButton.addEventListener("click", () => {
                 tasks.splice(taskIndex, 1)
+                render();
+            })
+        });
+    }
+
+    const taskDone = () => {
+        const doneButtons = document.querySelectorAll(".js-checkList__button--done");
+
+        doneButtons.forEach((doneButton, taskIndex) => {
+            doneButton.addEventListener("click", () => {
+                tasks[taskIndex].done = !tasks[taskIndex].done;
                 render();
             })
         });
@@ -28,8 +29,7 @@
         for (const task of tasks) {
             htmlString += `
             <li class="checkList__item">
-                    <button class="checkList__button js-checkList__button--done">
-                        <img width="30px" height="30px" src="images/not_done.png" alt="not_done">
+                    <button class="checkList__button checkList__button--done js-checkList__button--done"> ${task.done ? "✔" : ""}
                     </button>
                     <span class="checkList__task js-checkList__task ${task.done ? "checkList__task--done" : ""}">${task.content}</span>
                     <button class="checkList__button js-checkList__button--remove">
@@ -42,6 +42,8 @@
         document.querySelector(".js-tasks").innerHTML = htmlString;
 
         removeTask();
+
+        taskDone();
 
     };
 
