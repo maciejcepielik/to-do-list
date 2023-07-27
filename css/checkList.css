@@ -4,14 +4,6 @@
     background-color: white;
 }
 
-.checkList__title {
-    border: 1px solid #dddddd;
-    padding: 20px;
-    background-color: white;
-    font-weight: bold;
-    font-size: large;
-}
-
 .checkList__allTasks {
     list-style-type: none;
     padding: 0;
@@ -20,25 +12,34 @@
 
 .checkList__item {
     display: grid;
-    grid-template-columns: 50px minmax(300px, 1fr) 50px;
-    grid-template-rows: 50px;
+    grid-template-columns: 50px 1fr 50px;
     align-items: center;
     border-bottom: 1px solid #dddddd;
+    padding: 10px;
 }
 
 .checkList__task {
     padding: 0 5px;
 }
 
+.checkList__task--done {
+    text-decoration: line-through;
+}
+
 .checkList__button {
     background-color: white;
     width: 30px;
     height: 30px;
-    display: inline-flex;
+    display: flex;
     align-items: center;
     justify-content: center;
     margin: 10px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+}
+
+.checkList__button--done {
+    background-color: rgb(15, 182, 15);
+    color: white;
 }

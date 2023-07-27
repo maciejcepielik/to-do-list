@@ -2,3 +2,11 @@
     background-color: #eeeeee;
     margin: 10px;
 }
+
+.container__title {
+    border: 1px solid #dddddd;
+    padding: 15px;
+    background-color: white;
+    font-weight: bold;
+    font-size: large;
+}
