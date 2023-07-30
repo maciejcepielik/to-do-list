@@ -1,6 +1,6 @@
 # To do list
 
-![demo] (https://raw.githubusercontent.com/maciejcepielik/to-do-list/c803860fc0609f2e314b7503060cf9e00e4cca6e/images/demo.gif)
+![demo](https://raw.githubusercontent.com/maciejcepielik/to-do-list/c803860fc0609f2e314b7503060cf9e00e4cca6e/images/demo.gif)
 
 ## Demo
 
