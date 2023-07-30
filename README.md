@@ -13,4 +13,4 @@ Want to make your organization more effective?
 Use this web application to manage your daily tasks. 
 Add a task, mark the task as complete or delete the task from your to-do list.
 
-Have fun & good  luck! :)
+Good  luck! :)
