@@ -4,14 +4,15 @@
     margin: 0 0 10px;
     background-color: white;
     display: grid;
-    grid-template-columns: minmax(200px, 1fr) 140px;
+    grid-template-columns: minmax(200px, 1fr) auto;
+    grid-gap: 20px;
     align-items: center;
 }
 
 @media (max-width: 768px) {
     .form {
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr;
+        /* grid-template-rows: 1fr 1fr; */
     }
 }
 

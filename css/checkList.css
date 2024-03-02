@@ -37,9 +37,21 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    color: white
 }
 
 .checkList__button--done {
-    background-color: rgb(15, 182, 15);
-    color: white;
+    background-color: hsl(120, 85%, 39%);
+}
+
+.checkList__button--done:hover {
+    background-color: hsl(120, 85%, 44%);
+}
+
+.checkList__button--remove {
+    background-color: hsl(0, 85%, 39%);
+}
+
+.checkList__button--remove:hover {
+    background-color: hsl(0, 85%, 44%);
 }
