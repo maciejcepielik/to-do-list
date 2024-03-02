@@ -44,14 +44,17 @@
         for (const task of tasks) {
             htmlString += `
             <li class="checkList__item">
-                    <button class="checkList__button checkList__button--done js-checkList__button--done"> ${task.done ? "✔" : ""}
+                    <button class="checkList__button checkList__button--done js-checkList__button--done">
+                        ${task.done ? "✔" : ""}
                     </button>
-                    <span class="checkList__task js-checkList__task ${task.done ? "checkList__task--done" : ""}">${task.content}</span>
-                    <button class="checkList__button js-checkList__button--remove">
-                        <img width="30px" height="30px" src="images/delete_icon.png" alt="delete">
+                    <span class="checkList__task js-checkList__task ${task.done ? "checkList__task--done" : ""}">
+                        ${task.content}
+                    </span>
+                    <button class="checkList__button checkList__button--remove js-checkList__button--remove">
+                        🗑️
                     </button>
             </li>
-            `
+            `;
         }
 
         document.querySelector(".js-tasks").innerHTML = htmlString;
