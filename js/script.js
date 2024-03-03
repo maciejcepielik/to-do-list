@@ -44,11 +44,11 @@
         });
     };
 
-    const render = () => {
-        let htmlString = "";
+    const renderTasks = () => {
+        let htmlTasksString = "";
 
         for (const task of tasks) {
-            htmlString += `
+            htmlTasksString += `
                 <li class="checkList__item">
                     <button class="checkList__button checkList__button--done js-checkList__button--done">
                         ${task.done ? "✔" : ""}
@@ -63,7 +63,29 @@
             `;
         }
 
-        document.querySelector(".js-tasks").innerHTML = htmlString;
+        document.querySelector(".js-tasks").innerHTML = htmlTasksString;
+    };
+
+    const renderButtons = () => {
+        let htmlButtonsString = ""
+
+        if (tasks.length) {
+            htmlButtonsString += `
+                <button class="buttons__hideComplete">
+                   Ukryj ukończone
+                </button>
+                <button class="buttons__hideComplete">
+                    Ukończ wszystkie
+                </button>
+            `;
+        }
+
+        document.querySelector(".js-buttons").innerHTML = htmlButtonsString;
+    };
+    
+    const render = () => {
+        renderTasks();
+        renderButtons();
 
         bindEvents();
     };

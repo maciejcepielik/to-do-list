@@ -1,0 +1,30 @@
+.buttons {
+    margin: auto 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+    .buttons {
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+}
+
+.buttons__hideComplete {
+    background-color: transparent;
+    border: none;
+    color: teal;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .buttons__hideComplete {
+        margin: 0 auto 20px;
+    }
+}
+
+.buttons__hideComplete:hover {
+    color: hsl(180, 100%, 35%);
+}
