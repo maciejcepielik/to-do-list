@@ -17,6 +17,7 @@
     color: teal;
     margin-left: 10px;
     cursor: pointer;
+    transition: 0.5s;
 }
 
 @media (max-width: 768px) {
@@ -27,4 +28,9 @@
 
 .buttons__hideComplete:hover {
     color: hsl(180, 100%, 35%);
+}
+
+.buttons__hideComplete:disabled {
+    cursor: not-allowed;
+    color: rgb(179, 179, 179);
 }
