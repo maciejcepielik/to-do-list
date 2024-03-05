@@ -16,10 +16,11 @@ Additionally, you can show/hide completed tasks and mark all incomplete tasks as
 
 Good  luck! :)
 
-## Technologies used in  this project
+## Technologies used in this project
 - HTML
 - CSS with BEM convention
 - JavaScript
 - MediaQueries
 - Grid
 - Flex
+- Immutability
