@@ -11,7 +11,8 @@ https://maciejcepielik.github.io/to-do-list/
 Want to make your organization more effective?
 
 Use this web application to manage your daily tasks. 
-Add a task, mark the task as complete or delete the task from your to-do list.
+Add a task, mark it as complete, or delete it from your to-do list. 
+Additionally, you can show/hide completed tasks and mark all incomplete tasks as done.
 
 Good  luck! :)
 
